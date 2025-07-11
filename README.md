@@ -10,9 +10,9 @@
 
 Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who loves building scalable systems and clean code architectures.
 
-🧠 I specialize in developing **educational platforms**, **ERP systems**, and **modern web applications**, using tools like **ASP.NET Core**, **Entity Framework Core**, and **SQL Server**.
+🧠 I enjoy working across the stack — from building powerful **backends** using **ASP.NET Core**, **Entity Framework Core**, and **SQL Server**, to creating **frontend pages** with modern web tools and clean UI design.
 
-✨ I'm passionate about clean code, design patterns, and making software that's both **efficient** and **maintainable**.
+✨ I'm passionate about writing maintainable code, applying design patterns, and using best practices that make software efficient and reliable.
 
 ---
 
@@ -82,6 +82,18 @@ A powerful event management platform supporting organizers, attendees, and staff
 - Clean layered architecture with advanced database structure
 
 ---
+
+
+Some of my featured frontend pages include:
+
+- 🎮 [GameGate](https://github.com/Amr-shawky/GameGate) — a gaming-themed landing page with creative visuals  
+- 🔍 [RegexCraft](https://github.com/Amr-shawky/RegexCraft) — a tool that helps visualize and test regular expressions  
+- 🔖 [Bookmarker](https://github.com/Amr-shawky/Bookmarker) — a responsive bookmarking landing page  
+- 🧑‍🎨 [Daniels](https://github.com/Amr-shawky/Daniels) — a personal portfolio UI built with animation effects  
+- 🍽️ [Mealify](https://github.com/Amr-shawky/Mealify) — a restaurant template with sleek layout and responsive design  
+- ☁️ [WeatherCore](https://github.com/Amr-shawky/WeatherCore) — a simple weather app that uses a public API  
+- 🧁 [Bakery](https://github.com/Amr-shawky/Bakery) — a bakery website with clean sections and elegant colors
+
 
 ### 📊 GitHub Stats
 
