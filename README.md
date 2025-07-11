@@ -34,11 +34,14 @@ Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who
 
 ---
 
-<p align="center">
+<!-- <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="/assets/github-snake-dark.svg">
     <img src="/assets/github-snake.svg" alt="snake animation" width="100%">
   </picture>
+</p> -->
+<p align="center">
+  <img src="https://github.com/Amr-shawky/Amr-shawky/blob/main/assets/github-snake.svg" alt="GitHub Snake" />
 </p>
 
 ---
