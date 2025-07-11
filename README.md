@@ -34,12 +34,6 @@ Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who
 
 ---
 
-<!-- <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="/assets/github-snake-dark.svg">
-    <img src="/assets/github-snake.svg" alt="snake animation" width="100%">
-  </picture>
-</p> -->
 <p align="center">
   <img src="https://github.com/Amr-shawky/Amr-shawky/blob/main/assets/github-snake-dark.svg" alt="GitHub Snake" />
 </p>
@@ -86,7 +80,7 @@ An online bookstore built using **ASP.NET Core MVC**, providing a smooth and sim
 ### 🌐 Connect with Me
 
 <p align="center">
-  <a href="mailto:amrmohamedshawky0@gmail.com"><img src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://www.linkedin.com/in/amr-mohamed-shawky"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:amrshawky936@gmail.com"><img src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/3mrshawky/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="https://github.com/Amr-shawky"><img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>
