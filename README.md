@@ -17,7 +17,6 @@ Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who
 ✨ I'm passionate about writing maintainable code, applying design patterns, and using best practices that make software efficient and reliable.
 
 ---
-
 ### 🛠️ Tech Stack
 
 <p align="center">
@@ -33,6 +32,7 @@ Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who
   <img src="https://img.shields.io/badge/-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
   <img src="https://img.shields.io/badge/-Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
   <img src="https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/-Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass">
   <img src="https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
   <img src="https://img.shields.io/badge/-Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
   <img src="https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
