@@ -20,8 +20,6 @@ Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who
 
 ### 🛠️ Tech Stack
 
-### 🛠️ Tech Stack
-
 <p align="center">
   <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#">
   <img src="https://img.shields.io/badge/-ASP.NET%20Core-512BD4?style=for-the-badge&logo=.net&logoColor=white" alt="ASP.NET Core">
