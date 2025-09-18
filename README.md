@@ -107,7 +107,7 @@ Some of my featured frontend pages include:
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Amr-shawky&show_icons=true&theme=radical&v=8" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amr-shawky&layout=compact&theme=radical&v=8" alt="Top Languages" width="36%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amr-shawky&layout=compact&theme=radical&v=9" alt="Top Languages" width="36%" />
 </p>
 <!-- If the stats above do not load, you may be hitting the GitHub API rate limit. Visit https://github.com/anuraghazra/github-readme-stats for troubleshooting. -->
 
