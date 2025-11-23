@@ -8,7 +8,7 @@
 
 ### 🚀 About Me
 
-Hi, I'm **Amr Mohamed Shawky** — a **Full Stack .NET Engineer** and **Technical Content Creator** (Ranked **#6** in Egypt 🇪🇬).
+Hi, I'm **Amr Mohamed Shawky** — a **Full Stack .NET Engineer** and **Technical Content Creator** (Ranked **#6** on LinkedIn Egypt 🇪🇬).
 
 🧠 I moved beyond just writing code to **engineering scalable solutions**. I specialize in building robust systems using **Clean Architecture**, **CQRS**, and **Vertical Slice Architecture**, ensuring maintainability and performance.
 
