@@ -8,13 +8,12 @@
 
 ### 🚀 About Me
 
-Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who loves building scalable systems and clean code architectures.
+Hi, I'm **Amr Mohamed Shawky** — a **Full Stack .NET Engineer** and **Technical Content Creator** (Ranked **#6** in Egypt 🇪🇬).
 
-🧠 I enjoy working across the stack — from building powerful **backends** using **ASP.NET Core**, **Entity Framework Core**, and **SQL Server**, to creating **frontend pages** with modern web tools and clean UI design.
+🧠 I moved beyond just writing code to **engineering scalable solutions**. I specialize in building robust systems using **Clean Architecture**, **CQRS**, and **Vertical Slice Architecture**, ensuring maintainability and performance.
 
-📹 I also create **technical content** and tutorials on my [YouTube channel](https://www.youtube.com/@Eng_Amr) to help others learn programming and software development.
+📹 I am also dedicated to the community, sharing advanced technical tutorials on my [YouTube channel](https://www.youtube.com/@Eng_Amr) to help developers level up their skills.
 
-✨ I'm passionate about writing maintainable code, applying design patterns, and using best practices that make software efficient and reliable.
 
 ---
 ### 🛠️ Tech Stack
@@ -52,7 +51,7 @@ Hi, I'm **Amr Mohamed Shawky** — a dedicated **Full Stack .NET Developer** who
 
 ### 💼 Featured Projects
 
-#### **1.** [**🏋️‍♂️ Elevate Fitness System**](https://www.google.com/search?q=https://github.com/Elevate-Team-Project/Fitness_Microservices "null")
+#### **1.** [**🏋️‍♂️ Elevate Fitness System**](https://www.google.com/search?q=https://github.com/Elevate-Team-Project/Fitness_Microservices)
 
 A distributed fitness management system designed for high availability and modularity.
 
@@ -61,7 +60,7 @@ A distributed fitness management system designed for high availability and modul
 - **Tech:** .NET Core, RabbitMQ, MassTransit, Ocelot API Gateway, Docker.
     
 
-#### **2.** [**📝 OnlineExam API**](https://www.google.com/search?q=https://github.com/Elevate-Bootcamp/OnlineExam "null")
+#### **2.** [**📝 OnlineExam API**](https://www.google.com/search?q=https://github.com/Elevate-Bootcamp/OnlineExam)
 
 A robust Online Exam System built with **.NET 8**, focusing on performance and scalability.
 
@@ -70,57 +69,57 @@ A robust Online Exam System built with **.NET 8**, focusing on performance and s
 - **Tech:** Clean Architecture, Vertical Slice, CQRS, SQL Server.
     
 
-#### **3.** [**🍔 ShopStream (MEAN Stack)**](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream "null")
+#### **3.** [**🍔 ShopStream (MEAN Stack)**](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream)
 
 A full-stack food ordering platform built with **Angular** and **Node.js**.
 
-- **Links:** [Frontend Repo](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream "null") | [Backend Repo](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream-Backend "null")
+- **Links:** [Frontend Repo](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream) | [Backend Repo](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream-Backend)
     
 
-#### **4.** [**🛒 FreshCart**](https://www.google.com/search?q=https://github.com/Amr-shawky/e-commerce "null")
+#### **4.** [**🛒 FreshCart**](https://www.google.com/search?q=https://github.com/Amr-shawky/e-commerce)
 
 A modern e-commerce app providing a seamless shopping experience.
 
 - **Tech:** Angular, Tailwind CSS, TypeScript.
     
 
-#### **5.** [**🎓 Novira LMS**](https://www.google.com/search?q=https://github.com/Amr-shawky/Novira "null")
+#### **5.** [**🎓 Novira LMS**](https://www.google.com/search?q=https://github.com/Amr-shawky/Novira)
 
 A modern E-learning platform for students to browse and enroll in courses.
 
 - **Tech:** Angular, Angular Material, Bootstrap.
     
 
-#### **6.** [**🎫 Event Management System**](https://www.google.com/search?q=https://github.com/EGDevNinjas/EventManagementSystem "null")
+#### **6.** [**🎫 Event Management System**](https://www.google.com/search?q=https://github.com/EGDevNinjas/EventManagementSystem)
 
 A full-featured platform for creating and attending events with real-time capabilities.
 
 - **Tech:** ASP.NET Core, SignalR, SQL Server.
     
 
-#### **7.** [**🎓 Educational System API**](https://www.google.com/search?q=https://github.com/AspAlliance/Educational_System "null")
+#### **7.** [**🎓 Educational System API**](https://www.google.com/search?q=https://github.com/AspAlliance/Educational_System)
 
 A backend service for managing courses, lessons, and assessments.
 
-#### **8.** [**📚 BStore**](https://github.com/Amr-shawky/BStore "null")
+#### **8.** [**📚 BStore**](https://github.com/Amr-shawky/BStore)
 
 A classic online bookstore built with **ASP.NET Core MVC**.
 
 ### 🎨 Frontend Creative Collection
 
-- 🎮 [GameGate](https://github.com/Amr-shawky/GameGate "null") — Gaming-themed landing page.
+- 🎮 [GameGate](https://github.com/Amr-shawky/GameGate) — Gaming-themed landing page.
     
-- 🔍 [RegexCraft](https://github.com/Amr-shawky/RegexCraft "null") — Regex visualization tool.
+- 🔍 [RegexCraft](https://github.com/Amr-shawky/RegexCraft) — Regex visualization tool.
     
-- 🔖 [Bookmarker](https://github.com/Amr-shawky/Bookmarker "null") — Responsive bookmarking page.
+- 🔖 [Bookmarker](https://github.com/Amr-shawky/Bookmarker) — Responsive bookmarking page.
     
-- 🧑‍🎨 [Daniels](https://github.com/Amr-shawky/Daniels "null") — Personal portfolio UI.
+- 🧑‍🎨 [Daniels](https://github.com/Amr-shawky/Daniels) — Personal portfolio UI.
     
-- 🍽️ [Mealify](https://github.com/Amr-shawky/Mealify "null") — Restaurant template.
+- 🍽️ [Mealify](https://github.com/Amr-shawky/Mealify) — Restaurant template.
     
-- ☁️ [WeatherCore](https://github.com/Amr-shawky/WeatherCore "null") — API-based weather app.
+- ☁️ [WeatherCore](https://github.com/Amr-shawky/WeatherCore) — API-based weather app.
     
-- 🧁 [Bakery](https://github.com/Amr-shawky/Bakery "null") — Bakery website.
+- 🧁 [Bakery](https://github.com/Amr-shawky/Bakery) — Bakery website.
     
 
 ### 📊 GitHub Stats
