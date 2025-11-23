@@ -51,7 +51,7 @@ Hi, I'm **Amr Mohamed Shawky** — a **Full Stack .NET Engineer** and **Technica
 
 ### 💼 Featured Projects
 
-#### **1.** [**🏋️‍♂️ Elevate Fitness System**](https://www.google.com/search?q=https://github.com/Elevate-Team-Project/Fitness_Microservices)
+#### **1.** [**🏋️‍♂️ Elevate Fitness System**](https://github.com/Elevate-Team-Project/Fitness_Microservices)
 
 A distributed fitness management system designed for high availability and modularity.
 
@@ -60,7 +60,7 @@ A distributed fitness management system designed for high availability and modul
 - **Tech:** .NET Core, RabbitMQ, MassTransit, Ocelot API Gateway, Docker.
     
 
-#### **2.** [**📝 OnlineExam API**](https://www.google.com/search?q=https://github.com/Elevate-Bootcamp/OnlineExam)
+#### **2.** [**📝 OnlineExam API**](https://github.com/Elevate-Bootcamp/OnlineExam)
 
 A robust Online Exam System built with **.NET 8**, focusing on performance and scalability.
 
@@ -69,35 +69,35 @@ A robust Online Exam System built with **.NET 8**, focusing on performance and s
 - **Tech:** Clean Architecture, Vertical Slice, CQRS, SQL Server.
     
 
-#### **3.** [**🍔 ShopStream (MEAN Stack)**](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream)
+#### **3.** [**🍔 ShopStream (MEAN Stack)**](https://github.com/NTI-ProjectHub/ShopStream)
 
 A full-stack food ordering platform built with **Angular** and **Node.js**.
 
-- **Links:** [Frontend Repo](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream) | [Backend Repo](https://www.google.com/search?q=https://github.com/NTI-ProjectHub/ShopStream-Backend)
+- **Links:** [Frontend Repo](https://github.com/NTI-ProjectHub/ShopStream) | [Backend Repo](https://github.com/NTI-ProjectHub/ShopStream-Backend)
     
 
-#### **4.** [**🛒 FreshCart**](https://www.google.com/search?q=https://github.com/Amr-shawky/e-commerce)
+#### **4.** [**🛒 FreshCart**](https://github.com/Amr-shawky/e-commerce)
 
 A modern e-commerce app providing a seamless shopping experience.
 
 - **Tech:** Angular, Tailwind CSS, TypeScript.
     
 
-#### **5.** [**🎓 Novira LMS**](https://www.google.com/search?q=https://github.com/Amr-shawky/Novira)
+#### **5.** [**🎓 Novira LMS**](https://github.com/Amr-shawky/Novira)
 
 A modern E-learning platform for students to browse and enroll in courses.
 
 - **Tech:** Angular, Angular Material, Bootstrap.
     
 
-#### **6.** [**🎫 Event Management System**](https://www.google.com/search?q=https://github.com/EGDevNinjas/EventManagementSystem)
+#### **6.** [**🎫 Event Management System**](https://github.com/EGDevNinjas/EventManagementSystem)
 
 A full-featured platform for creating and attending events with real-time capabilities.
 
 - **Tech:** ASP.NET Core, SignalR, SQL Server.
     
 
-#### **7.** [**🎓 Educational System API**](https://www.google.com/search?q=https://github.com/AspAlliance/Educational_System)
+#### **7.** [**🎓 Educational System API**](https://github.com/AspAlliance/Educational_System)
 
 A backend service for managing courses, lessons, and assessments.
 
