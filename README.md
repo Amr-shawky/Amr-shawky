@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://amr-shawky.vercel.app/">
+<a href="[https://amr-shawky.vercel.app/](https://amr-shawky.github.io/Portfolio-Website/)">
   <img src="./assets/GitHub.gif" alt="Welcome Banner" width="100%">
 </a>
 </p>
