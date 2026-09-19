@@ -22,12 +22,6 @@
 
 <br/>
 
-<div align="center">
-  <img src="./assets/stickman-duel.svg" alt="Stickman Kinetic Sword Duel" width="100%" />
-</div>
-
-<br/>
-
 ---
 
 ### 🚀 About Me
