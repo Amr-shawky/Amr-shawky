@@ -4,10 +4,20 @@
       <stop offset="0%" stop-color="#0e1424" />
       <stop offset="100%" stop-color="#0b0f19" />
     </linearGradient>
-    <linearGradient id="redBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+
+    <linearGradient id="laserPillarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ff334b" />
-      <stop offset="100%" stop-color="#e63946" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ff334b" />
     </linearGradient>
+
+    <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
 
   <style>
@@ -18,11 +28,23 @@
   <!-- Container -->
   <rect width="960" height="120" rx="12" fill="#080c14" stroke="#1e293b" stroke-width="1.2" />
 
+  <!-- ANIMATION: LASER BORDER TRACER -->
+  <rect width="960" height="120" rx="12" fill="none" stroke="url(#laserPillarGrad)" stroke-width="1.8" stroke-dasharray="90, 2070" stroke-dashoffset="0" filter="url(#dotGlow)">
+    <animate attributeName="stroke-dashoffset" from="2160" to="0" dur="4.2s" repeatCount="indefinite" />
+  </rect>
+
   <!-- PILLAR 1: CQRS & VERTICAL SLICE -->
   <g transform="translate(14, 12)">
     <rect width="220" height="96" rx="8" fill="url(#pillarBg)" stroke="#334155" stroke-width="1" />
     <rect x="0" y="0" width="4" height="96" rx="2" fill="#ff334b" />
-    <text x="16" y="24" fill="#ff334b" font-size="10" font-weight="700" class="font-mono">PATTERN SPECIALTY</text>
+    <!-- Animated Traveling Light Pulse -->
+    <circle cx="2" cy="0" r="3" fill="#ff6b7d" filter="url(#dotGlow)">
+      <animateMotion path="M 0,0 L 0,96" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <text x="16" y="24" fill="#ff334b" font-size="10" font-weight="700" class="font-mono">
+      PATTERN SPECIALTY<tspan fill="#ff334b">_<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" /></tspan>
+    </text>
     <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">CQRS &amp; Vertical Slices</text>
     <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">Decoupled command/query</text>
     <text x="16" y="78" fill="#64748b" font-size="10" class="font-mono">MediatR • Feature Slices</text>
@@ -32,6 +54,11 @@
   <g transform="translate(250, 12)">
     <rect width="220" height="96" rx="8" fill="url(#pillarBg)" stroke="#334155" stroke-width="1" />
     <rect x="0" y="0" width="4" height="96" rx="2" fill="#38bdf8" />
+    <!-- Animated Traveling Light Pulse -->
+    <circle cx="2" cy="0" r="3" fill="#7dd3fc" filter="url(#dotGlow)">
+      <animateMotion path="M 0,0 L 0,96" dur="2.2s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+
     <text x="16" y="24" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">DISTRIBUTED SYSTEMS</text>
     <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">Microservices &amp; Events</text>
     <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">Asynchronous messaging</text>
@@ -42,6 +69,11 @@
   <g transform="translate(486, 12)">
     <rect width="220" height="96" rx="8" fill="url(#pillarBg)" stroke="#334155" stroke-width="1" />
     <rect x="0" y="0" width="4" height="96" rx="2" fill="#818cf8" />
+    <!-- Animated Traveling Light Pulse -->
+    <circle cx="2" cy="0" r="3" fill="#a5b4fc" filter="url(#dotGlow)">
+      <animateMotion path="M 0,0 L 0,96" dur="2.4s" begin="1s" repeatCount="indefinite" />
+    </circle>
+
     <text x="16" y="24" fill="#818cf8" font-size="10" font-weight="700" class="font-mono">CORE ENGINEERING</text>
     <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">Clean Architecture &amp; DDD</text>
     <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">Rich domains &amp; testability</text>
@@ -52,6 +84,11 @@
   <g transform="translate(722, 12)">
     <rect width="224" height="96" rx="8" fill="url(#pillarBg)" stroke="#ff334b" stroke-width="1" stroke-opacity="0.4" />
     <rect x="0" y="0" width="4" height="96" rx="2" fill="#ff334b" />
+    <!-- Animated Traveling Light Pulse -->
+    <circle cx="2" cy="0" r="3" fill="#ff6b7d" filter="url(#dotGlow)">
+      <animateMotion path="M 0,0 L 0,96" dur="1.8s" begin="0.3s" repeatCount="indefinite" />
+    </circle>
+
     <text x="16" y="24" fill="#ff334b" font-size="10" font-weight="700" class="font-mono">LEADERSHIP &amp; COMMUNITY</text>
     <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">Ranked #6 Tech Creator</text>
     <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">LinkedIn Egypt &amp; YouTube</text>
