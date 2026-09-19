@@ -5,9 +5,10 @@
       <stop offset="100%" stop-color="#0f172a" />
     </linearGradient>
 
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fbbf24" />
-      <stop offset="100%" stop-color="#f59e0b" />
+    <linearGradient id="laserCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ff334b" />
     </linearGradient>
 
     <linearGradient id="redBadgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -37,15 +38,22 @@
   <rect width="960" height="170" rx="14" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5" />
   <rect width="960" height="170" rx="14" fill="url(#cardGrid)" />
 
-  <!-- Left Accent Ribbon -->
-  <rect x="0" y="0" width="6" height="170" rx="3" fill="#ff334b" />
+  <!-- ANIMATION: LASER BORDER TRACER -->
+  <rect width="960" height="170" rx="14" fill="none" stroke="url(#laserCardGrad)" stroke-width="2" stroke-dasharray="100, 2160" stroke-dashoffset="0" filter="url(#badgeGlow)">
+    <animate attributeName="stroke-dashoffset" from="2260" to="0" dur="4.5s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Left Accent Ribbon with pulsating glow -->
+  <rect x="0" y="0" width="6" height="170" rx="3" fill="#ff334b">
+    <animate attributeName="fill" values="#ff334b;#38bdf8;#ff334b" dur="4s" repeatCount="indefinite" />
+  </rect>
 
   <!-- SECTION 1: DEGREE & UNIVERSITY (Left Column) -->
   <g transform="translate(36, 32)">
-    <!-- Mini Category Tag -->
-    <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1.2" class="font-mono">ACADEMIC FOUNDATION</text>
+    <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1.2" class="font-mono">
+      ACADEMIC FOUNDATION<tspan fill="#ff334b">_<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" /></tspan>
+    </text>
     
-    <!-- University & Degree Title -->
     <text x="0" y="30" fill="#ffffff" font-size="19" font-weight="800" class="font-sans">Computer Science Graduate</text>
     <text x="0" y="55" fill="#cbd5e1" font-size="14" font-weight="600" class="font-sans">Faculty of Computers &amp; Artificial Intelligence</text>
     <text x="0" y="78" fill="#38bdf8" font-size="13" font-weight="500" class="font-sans">Benha University</text>
@@ -58,15 +66,22 @@
 
   <!-- SECTION 2: GRADUATION PROJECT A+ (Center-Right Hero Metric) -->
   <g transform="translate(480, 24)">
-    <!-- Card Container for Project Grade -->
     <rect width="210" height="122" rx="10" fill="#111827" stroke="#ff334b" stroke-width="1.5" stroke-opacity="0.4" />
     
     <text x="18" y="24" fill="#94a3b8" font-size="9.5" font-weight="700" letter-spacing="0.8" class="font-mono">GRADUATION PROJECT (PayOn)</text>
     
-    <!-- Grade A+ Big Impact Text -->
+    <!-- Grade A+ Big Impact Text with ANIMATED PULSE -->
     <g transform="translate(18, 68)">
+      <!-- Pulsing Outer Ring -->
+      <rect x="-4" y="-36" width="64" height="42" rx="8" fill="none" stroke="#ff334b" stroke-width="2">
+        <animate attributeName="stroke-width" values="1.5;3.5;1.5" dur="1.8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" repeatCount="indefinite" />
+      </rect>
+      
       <rect x="-4" y="-36" width="64" height="42" rx="8" fill="url(#redBadgeGrad)" filter="url(#badgeGlow)" />
-      <text x="28" y="-7" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" class="font-sans">A+</text>
+      <text x="28" y="-7" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" class="font-sans">
+        A+<animate attributeName="fill" values="#ffffff;#ffe4e6;#ffffff" dur="2s" repeatCount="indefinite" />
+      </text>
       
       <text x="72" y="-20" fill="#f8fafc" font-size="13.5" font-weight="700" class="font-sans">Distinction</text>
       <text x="72" y="-4" fill="#86efac" font-size="10" font-weight="600" class="font-mono">TOP TIER EVALUATION</text>
@@ -84,11 +99,13 @@
     
     <text x="18" y="24" fill="#94a3b8" font-size="9.5" font-weight="700" letter-spacing="0.8" class="font-mono">CUMULATIVE GPA</text>
     
-    <!-- GPA Score -->
+    <!-- GPA Score with Animated Color Pulse -->
     <g transform="translate(18, 68)">
       <text x="0" y="0" fill="#ffffff" font-size="34" font-weight="900" class="font-sans">3.2</text>
       <text x="56" y="-8" fill="#64748b" font-size="14" font-weight="600" class="font-sans">/ 4.0</text>
-      <text x="0" y="22" fill="#38bdf8" font-size="11" font-weight="600" class="font-mono">EXCELLENT STANDING</text>
+      <text x="0" y="22" fill="#38bdf8" font-size="11" font-weight="600" class="font-mono">
+        EXCELLENT STANDING<animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite" />
+      </text>
     </g>
 
     <text x="18" y="102" fill="#94a3b8" font-size="11" class="font-sans">Consistent Academic Merit</text>
