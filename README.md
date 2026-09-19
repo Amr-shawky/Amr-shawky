@@ -337,3 +337,10 @@ Beyond engineering systems, I am dedicated to knowledge sharing and developer me
   <a href="mailto:amrshawky936@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
   <a href="https://github.com/Amr-shawky"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </div>
+
+<br/>
+
+<div align="center">
+  <img src="./assets/stickman-duel.svg" alt="Stickman Kinetic Sword Duel" width="100%" />
+</div>
+
