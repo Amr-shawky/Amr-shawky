@@ -1,0 +1,483 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 175" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="arenaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14" />
+      <stop offset="50%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#05070d" />
+    </linearGradient>
+
+    <!-- Laser Border Gradient -->
+    <linearGradient id="duelLaser" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ff334b" />
+    </linearGradient>
+
+    <!-- Blade Glow Filters -->
+    <filter id="redBladeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="cyanBladeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="sparkGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Slash Arc Gradients -->
+    <linearGradient id="redSlashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ff334b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="cyanSlashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+    </linearGradient>
+
+    <!-- Grid Pattern for Arena Floor -->
+    <pattern id="arenaGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'SF Pro Text', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace; }
+    
+    /* 4-BEAT BATTLE CYCLE (Total: 2.4s intense loop) */
+    .beat-1 { animation: animBeat1 2.4s infinite; }
+    .beat-2 { animation: animBeat2 2.4s infinite; }
+    .beat-3 { animation: animBeat3 2.4s infinite; }
+    .beat-4 { animation: animBeat4 2.4s infinite; }
+
+    @keyframes animBeat1 {
+      0% { opacity: 1; visibility: visible; }
+      24.5% { opacity: 1; visibility: visible; }
+      25% { opacity: 0; visibility: hidden; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes animBeat2 {
+      0%, 24.5% { opacity: 0; visibility: hidden; }
+      25% { opacity: 1; visibility: visible; }
+      49.5% { opacity: 1; visibility: visible; }
+      50%, 100% { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes animBeat3 {
+      0%, 49.5% { opacity: 0; visibility: hidden; }
+      50% { opacity: 1; visibility: visible; }
+      74.5% { opacity: 1; visibility: visible; }
+      75%, 100% { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes animBeat4 {
+      0%, 74.5% { opacity: 0; visibility: hidden; }
+      75% { opacity: 1; visibility: visible; }
+      99.5% { opacity: 1; visibility: visible; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    /* Sub-beat flurry triggers inside Beat 2 */
+    .flurry-a { animation: animFlurryA 2.4s infinite; }
+    .flurry-b { animation: animFlurryB 2.4s infinite; }
+
+    @keyframes animFlurryA {
+      0%, 24.5% { opacity: 0; visibility: hidden; }
+      25% { opacity: 1; visibility: visible; }
+      36.5% { opacity: 1; visibility: visible; }
+      37%, 100% { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes animFlurryB {
+      0%, 36.5% { opacity: 0; visibility: hidden; }
+      37% { opacity: 1; visibility: visible; }
+      49.5% { opacity: 1; visibility: visible; }
+      50%, 100% { opacity: 0; visibility: hidden; }
+    }
+
+    /* Shockwave Expansion */
+    @keyframes shockwave {
+      0% { r: 4; opacity: 1; stroke-width: 3; }
+      70% { r: 45; opacity: 0.6; stroke-width: 1.5; }
+      100% { r: 60; opacity: 0; stroke-width: 0.5; }
+    }
+
+    @keyframes sparkBurst {
+      0% { transform: scale(0.3); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.9; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* Screen Shake during heavy strikes */
+    @keyframes battleShake {
+      0%, 23%, 27%, 48%, 52%, 73%, 77%, 100% { transform: translate(0, 0); }
+      24%, 49%, 74% { transform: translate(-2px, 2px); }
+      25%, 50%, 75% { transform: translate(2px, -2px); }
+      26%, 51%, 76% { transform: translate(-1px, -1px); }
+    }
+
+    .shaker { animation: battleShake 2.4s infinite ease-in-out; }
+  </style>
+
+  <!-- ARENA BASE -->
+  <g class="shaker">
+    <rect width="960" height="175" rx="14" fill="url(#arenaBg)" stroke="#1e293b" stroke-width="1.2" />
+    <rect width="960" height="175" rx="14" fill="url(#arenaGrid)" />
+
+    <!-- LASER PERIMETER TRACER -->
+    <rect width="960" height="175" rx="14" fill="none" stroke="url(#duelLaser)" stroke-width="1.8" stroke-dasharray="120, 2150" stroke-dashoffset="0" filter="url(#sparkGlow)">
+      <animate attributeName="stroke-dashoffset" from="2270" to="0" dur="3.6s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- ARENA FLOOR LINE -->
+    <line x1="50" y1="135" x2="910" y2="135" stroke="#334155" stroke-width="1.5" />
+    <!-- Floor neon reflection -->
+    <line x1="280" y1="135" x2="680" y2="135" stroke="#ff334b" stroke-width="1.5" stroke-opacity="0.3" />
+    <line x1="400" y1="135" x2="560" y2="135" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.5" />
+
+    <!-- Floor Hash Marks -->
+    <path d="M 120 135 L 120 142 M 240 135 L 240 142 M 360 135 L 360 142 M 480 135 L 480 145 M 600 135 L 600 142 M 720 135 L 720 142 M 840 135 L 840 142" stroke="#1e293b" stroke-width="1" />
+
+    <!-- TOP HUD OVERLAYS -->
+    <g transform="translate(32, 24)">
+      <circle cx="0" cy="0" r="3.5" fill="#ff334b">
+        <animate attributeName="opacity" values="1;0.2;1" dur="0.6s" repeatCount="indefinite" />
+      </circle>
+      <text x="12" y="3.5" fill="#94a3b8" font-size="9.5" font-weight="700" class="font-mono">
+        COMBAT_FEED // KINETIC_DUEL_v3<tspan fill="#ff334b">_<animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite" /></tspan>
+      </text>
+    </g>
+
+    <g transform="translate(928, 24)">
+      <text x="0" y="3.5" text-anchor="end" fill="#38bdf8" font-size="9.5" font-weight="700" class="font-mono">
+        VELOCITY: 880_FPS // CLASH_READY
+      </text>
+    </g>
+
+    <!-- FLOATING BATTLE EMBERS / PARTICLES -->
+    <circle cx="420" cy="110" r="1.5" fill="#ff334b" opacity="0.8">
+      <animate attributeName="cy" values="130;70" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="520" cy="120" r="1.5" fill="#38bdf8" opacity="0.8">
+      <animate attributeName="cy" values="135;80" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="2.4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="470" cy="95" r="1" fill="#ffffff" opacity="0.9">
+      <animate attributeName="cy" values="120;60" dur="1.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="1.6s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- ============================================================ -->
+    <!-- BEAT 1: HIGH-SPEED CHARGE & INITIAL BLADE CROSS (0.0s - 0.6s) -->
+    <!-- ============================================================ -->
+    <g class="beat-1">
+      <!-- Speed Dash Lines (Red) -->
+      <line x1="260" y1="90" x2="380" y2="90" stroke="#ff334b" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="8, 12" />
+      <line x1="280" y1="110" x2="400" y2="110" stroke="#ff334b" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="12, 16" />
+      <!-- Speed Dash Lines (Cyan) -->
+      <line x1="700" y1="85" x2="570" y2="85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="8, 12" />
+      <line x1="680" y1="105" x2="550" y2="105" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="12, 16" />
+
+      <!-- RED STICKMAN (Lunging Forward with Katana) -->
+      <g transform="translate(425, 0)">
+        <!-- Head -->
+        <circle cx="0" cy="74" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+        <!-- Red Headband / Fluttering Scarf -->
+        <path d="M -4 74 Q -16 68 -28 72 Q -38 76 -46 70" fill="none" stroke="#ff334b" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M -4 76 Q -14 74 -24 78 Q -32 82 -40 78" fill="none" stroke="#e63946" stroke-width="1.8" stroke-linecap="round" />
+        <!-- Torso (forward lean angle) -->
+        <line x1="0" y1="81.5" x2="14" y2="108" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Back Leg (extended thrust) -->
+        <line x1="14" y1="108" x2="-12" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-12" y1="122" x2="-32" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Front Leg (deep forward knee lunge) -->
+        <line x1="14" y1="108" x2="26" y2="120" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="26" y1="120" x2="20" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Arms (gripping sword thrust) -->
+        <line x1="4" y1="88" x2="26" y2="92" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Red Glowing Sword -->
+        <line x1="24" y1="94" x2="68" y2="82" stroke="#ff334b" stroke-width="4.5" filter="url(#redBladeGlow)" stroke-linecap="round" />
+        <line x1="24" y1="94" x2="68" y2="82" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        <!-- Sword Hilt -->
+        <line x1="21" y1="91" x2="27" y2="97" stroke="#94a3b8" stroke-width="2" />
+      </g>
+
+      <!-- CYAN STICKMAN (Descending Strike Guard) -->
+      <g transform="translate(535, 0)">
+        <!-- Head -->
+        <circle cx="0" cy="72" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+        <!-- Cyan Scarf Fluttering Back -->
+        <path d="M 4 72 Q 18 66 30 70 Q 40 74 48 68" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M 4 74 Q 16 72 26 76 Q 34 80 42 76" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" />
+        <!-- Torso -->
+        <line x1="0" y1="79.5" x2="-10" y2="106" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Front Leg (planted braced) -->
+        <line x1="-10" y1="106" x2="-22" y2="120" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-22" y1="120" x2="-18" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Back Leg (drive forward) -->
+        <line x1="-10" y1="106" x2="16" y2="120" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="16" y1="120" x2="34" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Arms (downward cross parry) -->
+        <line x1="-2" y1="86" x2="-26" y2="90" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Cyan Glowing Sword -->
+        <line x1="-24" y1="92" x2="-68" y2="82" stroke="#38bdf8" stroke-width="4.5" filter="url(#cyanBladeGlow)" stroke-linecap="round" />
+        <line x1="-24" y1="92" x2="-68" y2="82" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        <!-- Sword Hilt -->
+        <line x1="-21" y1="89" x2="-27" y2="95" stroke="#94a3b8" stroke-width="2" />
+      </g>
+
+      <!-- CLASH POINT 1 (Center x=480, y=86) -->
+      <!-- Expanding Shockwave Ring -->
+      <circle cx="480" cy="86" r="28" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8" />
+      <circle cx="480" cy="86" r="42" fill="none" stroke="#ff334b" stroke-width="1.5" opacity="0.5" />
+      <!-- Starburst Spark Rays -->
+      <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" filter="url(#sparkGlow)">
+        <line x1="480" y1="86" x2="465" y2="70" />
+        <line x1="480" y1="86" x2="495" y2="70" />
+        <line x1="480" y1="86" x2="480" y2="65" />
+        <line x1="480" y1="86" x2="460" y2="90" stroke="#ff334b" stroke-width="2.5" />
+        <line x1="480" y1="86" x2="500" y2="90" stroke="#38bdf8" stroke-width="2.5" />
+        <line x1="480" y1="86" x2="470" y2="102" />
+        <line x1="480" y1="86" x2="490" y2="102" />
+      </g>
+    </g>
+
+    <!-- ============================================================ -->
+    <!-- BEAT 2: LIGHTNING HIGH-SPEED FLURRY (0.6s - 1.2s)           -->
+    <!-- ============================================================ -->
+    <g class="beat-2">
+      <!-- SUB-FLURRY A: RED UPPER SLASH vs CYAN HIGH PARRY (0.6s - 0.9s) -->
+      <g class="flurry-a">
+        <!-- Giant Red Crescent Slash Arc -->
+        <path d="M 400 125 Q 450 45 510 65" fill="none" stroke="url(#redSlashGrad)" stroke-width="7" stroke-linecap="round" filter="url(#redBladeGlow)" />
+        
+        <!-- Red Stickman (Upper Slash Stance) -->
+        <g transform="translate(420, 0)">
+          <circle cx="0" cy="76" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+          <path d="M -4 76 Q -18 72 -32 78" fill="none" stroke="#ff334b" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="0" y1="83.5" x2="8" y2="108" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="8" y1="108" x2="-8" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-8" y1="122" x2="-14" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="8" y1="108" x2="22" y2="120" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="22" y1="120" x2="30" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <!-- Sword Sweeping Up -->
+          <line x1="4" y1="88" x2="35" y2="70" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="33" y1="72" x2="72" y2="52" stroke="#ff334b" stroke-width="4.5" filter="url(#redBladeGlow)" stroke-linecap="round" />
+          <line x1="33" y1="72" x2="72" y2="52" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        </g>
+
+        <!-- Cyan Stickman (High Block Guard) -->
+        <g transform="translate(540, 0)">
+          <circle cx="0" cy="76" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+          <path d="M 4 76 Q 18 72 32 78" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="0" y1="83.5" x2="-6" y2="108" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-6" y1="108" x2="-18" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-18" y1="122" x2="-24" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-6" y1="108" x2="10" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="10" y1="122" x2="16" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <!-- Two Hand Overhead Parry -->
+          <line x1="-2" y1="88" x2="-25" y2="68" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-24" y1="70" x2="-65" y2="52" stroke="#38bdf8" stroke-width="4.5" filter="url(#cyanBladeGlow)" stroke-linecap="round" />
+          <line x1="-24" y1="70" x2="-65" y2="52" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        </g>
+
+        <!-- HIGH SPARK EXPLOSION (x=485, y=55) -->
+        <circle cx="485" cy="55" r="22" fill="none" stroke="#ff334b" stroke-width="1.5" opacity="0.7" />
+        <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" filter="url(#sparkGlow)">
+          <line x1="485" y1="55" x2="470" y2="40" stroke="#ffea00" stroke-width="2.5" />
+          <line x1="485" y1="55" x2="500" y2="40" stroke="#ff334b" stroke-width="2.5" />
+          <line x1="485" y1="55" x2="465" y2="60" />
+          <line x1="485" y1="55" x2="505" y2="60" stroke="#38bdf8" stroke-width="2.5" />
+        </g>
+      </g>
+
+      <!-- SUB-FLURRY B: CYAN LOW COUNTER THRUST vs RED DOWNWARD DEFLECT (0.9s - 1.2s) -->
+      <g class="flurry-b">
+        <!-- Giant Cyan Thrust Speed Beam -->
+        <line x1="560" y1="108" x2="440" y2="108" stroke="url(#cyanSlashGrad)" stroke-width="6" stroke-linecap="round" filter="url(#cyanBladeGlow)" />
+
+        <!-- Red Stickman (Low Parrying Crouch) -->
+        <g transform="translate(425, 0)">
+          <circle cx="0" cy="82" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+          <path d="M -4 82 Q -18 78 -30 84" fill="none" stroke="#ff334b" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="0" y1="89.5" x2="6" y2="114" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="6" y1="114" x2="-14" y2="124" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-14" y1="124" x2="-22" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="6" y1="114" x2="18" y2="124" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="18" y1="124" x2="26" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <!-- Downward Blade Tip Guard -->
+          <line x1="2" y1="94" x2="28" y2="106" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="28" y1="106" x2="38" y2="132" stroke="#ff334b" stroke-width="4.5" filter="url(#redBladeGlow)" stroke-linecap="round" />
+          <line x1="28" y1="106" x2="38" y2="132" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        </g>
+
+        <!-- Cyan Stickman (Deep Low Lunge Thrust) -->
+        <g transform="translate(535, 0)">
+          <circle cx="0" cy="80" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+          <path d="M 4 80 Q 20 74 34 80" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="0" y1="87.5" x2="-10" y2="112" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-10" y1="112" x2="-28" y2="124" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-28" y1="124" x2="-36" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-10" y1="112" x2="14" y2="124" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="14" y1="124" x2="32" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <!-- Arm Extends Straight Forward -->
+          <line x1="-4" y1="92" x2="-35" y2="108" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+          <line x1="-35" y1="108" x2="-80" y2="108" stroke="#38bdf8" stroke-width="4.5" filter="url(#cyanBladeGlow)" stroke-linecap="round" />
+          <line x1="-35" y1="108" x2="-80" y2="108" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        </g>
+
+        <!-- LOW SPARK BURST (x=460, y=108) -->
+        <circle cx="460" cy="108" r="26" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.8" />
+        <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" filter="url(#sparkGlow)">
+          <line x1="460" y1="108" x2="445" y2="95" stroke="#38bdf8" stroke-width="2.5" />
+          <line x1="460" y1="108" x2="475" y2="95" stroke="#ffffff" stroke-width="2.5" />
+          <line x1="460" y1="108" x2="440" y2="120" stroke="#ff334b" stroke-width="2.5" />
+          <line x1="460" y1="108" x2="480" y2="120" stroke="#38bdf8" stroke-width="2.5" />
+        </g>
+      </g>
+    </g>
+
+    <!-- ============================================================ -->
+    <!-- BEAT 3: AERIAL DIVE ATTACK & GROUND CRUSH (1.2s - 1.8s)      -->
+    <!-- ============================================================ -->
+    <g class="beat-3">
+      <!-- Massive Vertical Downward Cyan Energy Beam -->
+      <path d="M 500 40 L 475 92" stroke="url(#cyanSlashGrad)" stroke-width="8" stroke-linecap="round" filter="url(#cyanBladeGlow)" />
+
+      <!-- RED STICKMAN: HEAVY BRACED CROUCH WITH TWO-HAND OVERHEAD GUARD -->
+      <g transform="translate(445, 0)">
+        <!-- Head -->
+        <circle cx="0" cy="85" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+        <!-- Scarf Flying Left -->
+        <path d="M -4 85 Q -16 80 -30 86 Q -42 90 -50 84" fill="none" stroke="#ff334b" stroke-width="2.5" stroke-linecap="round" />
+        <!-- Compressed Torso (heavy braced) -->
+        <line x1="0" y1="92.5" x2="4" y2="114" stroke="#f8fafc" stroke-width="3.5" stroke-linecap="round" />
+        <!-- Wide Planted Legs -->
+        <line x1="4" y1="114" x2="-20" y2="124" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-20" y1="124" x2="-32" y2="135" stroke="#f8fafc" stroke-width="3.5" stroke-linecap="round" />
+        <line x1="4" y1="114" x2="22" y2="124" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="22" y1="124" x2="34" y2="135" stroke="#f8fafc" stroke-width="3.5" stroke-linecap="round" />
+        <!-- Two Arms Raised Gripping Blade Horizontally -->
+        <line x1="2" y1="96" x2="16" y2="92" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="2" y1="96" x2="32" y2="92" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Horizontal Braced Red Blade -->
+        <line x1="-2" y1="90" x2="52" y2="90" stroke="#ff334b" stroke-width="5" filter="url(#redBladeGlow)" stroke-linecap="round" />
+        <line x1="-2" y1="90" x2="52" y2="90" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+      </g>
+
+      <!-- CYAN STICKMAN: MIDAIR DIVING CRUSH (x=505, y=52) -->
+      <g transform="translate(505, 0)">
+        <!-- Head Mid-air -->
+        <circle cx="0" cy="50" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+        <!-- Streamlined Scarf Flying Upwards -->
+        <path d="M 3 48 Q 16 38 28 34 Q 40 32 48 38" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+        <!-- Angled Body Diving Down -->
+        <line x1="0" y1="57.5" x2="10" y2="76" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Tucked Aerial Legs -->
+        <line x1="10" y1="76" x2="24" y2="70" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="24" y1="70" x2="36" y2="78" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="10" y1="76" x2="20" y2="84" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="20" y1="84" x2="30" y2="92" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Both Arms Slamming Sword Down -->
+        <line x1="-2" y1="64" x2="-22" y2="74" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Vertical Slamming Cyan Sword -->
+        <line x1="-22" y1="74" x2="-35" y2="92" stroke="#38bdf8" stroke-width="5" filter="url(#cyanBladeGlow)" stroke-linecap="round" />
+        <line x1="-22" y1="74" x2="-35" y2="92" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+      </g>
+
+      <!-- HEAVY IMPACT SHOCKWAVES AT CLASH (x=472, y=90) -->
+      <circle cx="472" cy="90" r="34" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.9" />
+      <circle cx="472" cy="90" r="54" fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.6" />
+      
+      <!-- Ground Impact Ripple Ellipse -->
+      <ellipse cx="465" cy="135" rx="55" ry="6" fill="none" stroke="#ff334b" stroke-width="2" opacity="0.7" />
+      <ellipse cx="465" cy="135" rx="85" ry="9" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.4" />
+
+      <!-- Downward & Lateral Spark Eruption -->
+      <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" filter="url(#sparkGlow)">
+        <line x1="472" y1="90" x2="435" y2="75" stroke="#ffea00" stroke-width="3" />
+        <line x1="472" y1="90" x2="510" y2="75" stroke="#38bdf8" stroke-width="3" />
+        <line x1="472" y1="90" x2="425" y2="100" stroke="#ff334b" stroke-width="2.5" />
+        <line x1="472" y1="90" x2="520" y2="100" stroke="#38bdf8" stroke-width="2.5" />
+        <line x1="472" y1="90" x2="445" y2="115" stroke="#ffffff" stroke-width="2.5" />
+        <line x1="472" y1="90" x2="500" y2="115" stroke="#ffffff" stroke-width="2.5" />
+      </g>
+    </g>
+
+    <!-- ============================================================ -->
+    <!-- BEAT 4: DEFLECTION RECOIL, SKID & COMBAT RESET (1.8s - 2.4s)  -->
+    <!-- ============================================================ -->
+    <g class="beat-4">
+      <!-- Wide Follow-through Red Cleave Trail -->
+      <path d="M 400 95 Q 460 70 520 115" fill="none" stroke="url(#redSlashGrad)" stroke-width="4.5" stroke-linecap="round" filter="url(#redBladeGlow)" opacity="0.7" />
+
+      <!-- RED STICKMAN (Rebounding back to Ready Stance at x=350) -->
+      <g transform="translate(350, 0)">
+        <!-- Head -->
+        <circle cx="0" cy="74" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+        <!-- Scarf Trailing Back -->
+        <path d="M -4 74 Q -16 70 -26 76 Q -34 80 -42 74" fill="none" stroke="#ff334b" stroke-width="2.5" stroke-linecap="round" />
+        <!-- Torso -->
+        <line x1="0" y1="81.5" x2="6" y2="108" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Legs (bracing skid stance) -->
+        <line x1="6" y1="108" x2="-14" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-14" y1="122" x2="-24" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="6" y1="108" x2="18" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="18" y1="122" x2="24" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Arm Holding Katana in Low Guard Pointing Forward -->
+        <line x1="2" y1="88" x2="22" y2="100" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="22" y1="100" x2="65" y2="104" stroke="#ff334b" stroke-width="4.5" filter="url(#redBladeGlow)" stroke-linecap="round" />
+        <line x1="22" y1="100" x2="65" y2="104" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        <!-- Skidding Floor Sparks -->
+        <circle cx="-24" cy="135" r="1.5" fill="#ffea00" />
+        <circle cx="-18" cy="134" r="1" fill="#ff334b" />
+        <line x1="-28" y1="135" x2="-4" y2="135" stroke="#ff334b" stroke-width="1.5" stroke-opacity="0.5" />
+      </g>
+
+      <!-- CYAN STICKMAN (Landing Backflip Skid at x=610) -->
+      <g transform="translate(610, 0)">
+        <!-- Head -->
+        <circle cx="0" cy="74" r="7.5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" />
+        <!-- Scarf Trailing Back -->
+        <path d="M 4 74 Q 16 70 28 76 Q 38 80 46 74" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+        <!-- Torso -->
+        <line x1="0" y1="81.5" x2="-6" y2="108" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Legs (sliding stop) -->
+        <line x1="-6" y1="108" x2="-18" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-18" y1="122" x2="-24" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-6" y1="108" x2="16" y2="122" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="16" y1="122" x2="26" y2="135" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <!-- Arm Holding Katana in Upper Guard Pointing at Red -->
+        <line x1="-2" y1="88" x2="-22" y2="98" stroke="#f8fafc" stroke-width="3" stroke-linecap="round" />
+        <line x1="-22" y1="98" x2="-64" y2="92" stroke="#38bdf8" stroke-width="4.5" filter="url(#cyanBladeGlow)" stroke-linecap="round" />
+        <line x1="-22" y1="98" x2="-64" y2="92" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        <!-- Skidding Floor Sparks -->
+        <circle cx="26" cy="135" r="1.5" fill="#38bdf8" />
+        <circle cx="18" cy="134" r="1" fill="#ffffff" />
+        <line x1="6" y1="135" x2="32" y2="135" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.5" />
+      </g>
+
+      <!-- Center Dissipating Clash Dust Ring -->
+      <ellipse cx="480" cy="135" rx="36" ry="4" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="4, 6" />
+    </g>
+  </g>
+</svg>
