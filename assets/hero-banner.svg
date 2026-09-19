@@ -12,9 +12,13 @@
       <stop offset="100%" stop-color="#e63946" />
     </linearGradient>
 
-    <linearGradient id="textWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#cbd5e1" />
+    <!-- Shimmering Headline Gradient with animated color stops -->
+    <linearGradient id="textWhiteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff;#ff6b7d;#ffffff" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#94a3b8" />
     </linearGradient>
 
     <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -22,14 +26,29 @@
       <stop offset="100%" stop-color="#0284c7" />
     </linearGradient>
 
-    <linearGradient id="glowRed" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff334b" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#ff334b" stop-opacity="0" />
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b" />
+      <stop offset="35%" stop-color="#38bdf8" />
+      <stop offset="70%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#ff334b" />
+    </linearGradient>
+
+    <linearGradient id="radarSectorGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff334b" stop-opacity="0" />
+      <stop offset="100%" stop-color="#ff334b" stop-opacity="0.35" />
     </linearGradient>
 
     <!-- Filters -->
-    <filter id="nodeGlow" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -55,40 +74,38 @@
     .font-mono { font-family: 'SF Pro Text', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace; }
     .font-sans { font-family: 'SF Pro Display', -apple-system, 'Inter', 'Segoe UI', Roboto, sans-serif; }
     
-    @keyframes pulseNode {
-      0%, 100% { r: 6; opacity: 0.8; }
-      50% { r: 8; opacity: 1; }
-    }
     @keyframes dataStream {
       from { stroke-dashoffset: 40; }
       to { stroke-dashoffset: 0; }
     }
-    @keyframes radarSpin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
 
-    .pulsing-node-1 { animation: pulseNode 3s ease-in-out infinite; }
-    .pulsing-node-2 { animation: pulseNode 2.4s ease-in-out infinite 0.8s; }
-    .pulsing-node-3 { animation: pulseNode 3.2s ease-in-out infinite 1.5s; }
-    .data-flow { stroke-dasharray: 6, 6; animation: dataStream 2s linear infinite; }
-    .reverse-flow { stroke-dasharray: 5, 5; animation: dataStream 2.5s linear infinite reverse; }
+    .data-flow { stroke-dasharray: 6, 6; animation: dataStream 1.8s linear infinite; }
+    .reverse-flow { stroke-dasharray: 5, 5; animation: dataStream 2.2s linear infinite reverse; }
   </style>
 
-  <!-- Base Card Rectangle with Border -->
+  <!-- Base Card Rectangle -->
   <rect width="960" height="360" rx="16" fill="url(#bgGradient)" stroke="#1e293b" stroke-width="1.5" />
 
   <!-- Blueprint Background Grid -->
   <rect width="960" height="360" rx="16" fill="url(#grid)" />
 
   <!-- Ambient Glow Orbs -->
-  <circle cx="820" cy="180" r="150" fill="#ff334b" fill-opacity="0.07" filter="url(#softGlow)" />
+  <circle cx="820" cy="180" r="150" fill="#ff334b" fill-opacity="0.08" filter="url(#softGlow)">
+    <animate attributeName="fill-opacity" values="0.05;0.12;0.05" dur="3.5s" repeatCount="indefinite" />
+  </circle>
   <circle cx="150" cy="60" r="120" fill="#ff334b" fill-opacity="0.05" filter="url(#softGlow)" />
-  <circle cx="650" cy="280" r="100" fill="#0284c7" fill-opacity="0.05" filter="url(#softGlow)" />
+  <circle cx="650" cy="280" r="100" fill="#0284c7" fill-opacity="0.06" filter="url(#softGlow)">
+    <animate attributeName="fill-opacity" values="0.04;0.09;0.04" dur="4s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- ANIMATION 1: ELECTRIC NEON LASER BORDER TRACER (Loops around perimeter) -->
+  <rect width="960" height="360" rx="16" fill="none" stroke="url(#laserGrad)" stroke-width="2.5" stroke-dasharray="140, 2500" stroke-dashoffset="0" filter="url(#laserGlow)">
+    <animate attributeName="stroke-dashoffset" from="2640" to="0" dur="5s" repeatCount="indefinite" />
+  </rect>
 
   <!-- ARCHITECTURAL BLUEPRINT GRAPHICS (Right Side) -->
   <g transform="translate(620, 40)">
-    <!-- Architectural Radar / Domain Boundary Circles -->
+    <!-- Architectural Radar Circles -->
     <circle cx="180" cy="140" r="130" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="4, 4" />
     <circle cx="180" cy="140" r="90" fill="none" stroke="#334155" stroke-width="1" stroke-opacity="0.7" />
     <circle cx="180" cy="140" r="45" fill="none" stroke="#ff334b" stroke-width="1" stroke-opacity="0.4" />
@@ -97,10 +114,18 @@
     <line x1="20" y1="140" x2="340" y2="140" stroke="#1e293b" stroke-width="1" stroke-opacity="0.6" />
     <line x1="180" y1="0" x2="180" y2="280" stroke="#1e293b" stroke-width="1" stroke-opacity="0.6" />
 
+    <!-- ANIMATION 2: ROTATING RADAR SCANNER BEAM -->
+    <g>
+      <path d="M 180 140 L 310 140 A 130 130 0 0 0 271 47 Z" fill="url(#radarSectorGrad)">
+        <animateTransform attributeName="transform" type="rotate" from="0 180 140" to="360 180 140" dur="4.5s" repeatCount="indefinite" />
+      </path>
+      <line x1="180" y1="140" x2="310" y2="140" stroke="#ff334b" stroke-width="1.8" filter="url(#nodeGlow)">
+        <animateTransform attributeName="transform" type="rotate" from="0 180 140" to="360 180 140" dur="4.5s" repeatCount="indefinite" />
+      </line>
+    </g>
+
     <!-- Microservices & Event Bus Message Flow Lines -->
-    <!-- Gateway to Message Broker -->
     <line x1="40" y1="80" x2="120" y2="140" stroke="#38bdf8" stroke-width="1.5" class="data-flow" />
-    <!-- Broker to Services -->
     <line x1="120" y1="140" x2="220" y2="70" stroke="#ff334b" stroke-width="1.5" class="data-flow" />
     <line x1="120" y1="140" x2="250" y2="140" stroke="#38bdf8" stroke-width="1.5" class="reverse-flow" />
     <line x1="120" y1="140" x2="210" y2="210" stroke="#ff334b" stroke-width="1.5" class="data-flow" />
@@ -109,18 +134,53 @@
     <path d="M 220,70 Q 280,60 300,100" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3, 3" />
     <path d="M 210,210 Q 270,220 300,180" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3, 3" />
 
+    <!-- ANIMATION 3: DYNAMIC DATA PACKETS TRAVELING ALONG PATHS -->
+    <!-- Packet 1: Gateway -> Event Bus -->
+    <circle r="3.5" fill="#38bdf8" filter="url(#nodeGlow)">
+      <animateMotion path="M 40,80 L 120,140" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- Packet 2: Event Bus -> Command Write DB -->
+    <circle r="3.5" fill="#ff334b" filter="url(#nodeGlow)">
+      <animateMotion path="M 120,140 L 220,70" dur="1.7s" begin="0.4s" repeatCount="indefinite" />
+    </circle>
+    <!-- Packet 3: Event Bus -> Query Read Cache -->
+    <circle r="3.5" fill="#38bdf8" filter="url(#nodeGlow)">
+      <animateMotion path="M 120,140 L 210,210" dur="1.9s" begin="0.8s" repeatCount="indefinite" />
+    </circle>
+    <!-- Packet 4: Event Bus -> SignalR Stream -->
+    <circle r="3.5" fill="#ffffff" filter="url(#nodeGlow)">
+      <animateMotion path="M 120,140 L 250,140" dur="1.3s" begin="0.2s" repeatCount="indefinite" />
+    </circle>
+
     <!-- Architecture Nodes -->
     <!-- Node 1: API Gateway -->
     <g transform="translate(40, 80)">
       <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
-      <circle cx="0" cy="0" r="5" fill="#38bdf8" />
+      <circle cx="0" cy="0" r="5" fill="#38bdf8">
+        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+      </circle>
       <text x="-2" y="26" text-anchor="middle" fill="#94a3b8" font-size="9" class="font-mono">GATEWAY</text>
     </g>
 
-    <!-- Node 2: Central Message Broker (RabbitMQ / MassTransit) -->
+    <!-- Node 2: Central Message Broker (RabbitMQ / MassTransit) with ANIMATED PULSE RIPPLE -->
     <g transform="translate(120, 140)">
+      <!-- Animated Shockwave Ripple 1 -->
+      <circle cx="0" cy="0" r="24" fill="none" stroke="#ff334b" stroke-width="2">
+        <animate attributeName="r" values="24;42;52" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0.3;0" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="2;1;0.5" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <!-- Animated Shockwave Ripple 2 (staggered) -->
+      <circle cx="0" cy="0" r="24" fill="none" stroke="#ff334b" stroke-width="1.5">
+        <animate attributeName="r" values="24;42;52" dur="2.2s" begin="1.1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0.3;0" dur="2.2s" begin="1.1s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="1.5;0.8;0.5" dur="2.2s" begin="1.1s" repeatCount="indefinite" />
+      </circle>
+      
       <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#ff334b" stroke-width="2" filter="url(#nodeGlow)" />
-      <circle cx="0" cy="0" r="8" fill="#ff334b" class="pulsing-node-1" />
+      <circle cx="0" cy="0" r="8" fill="#ff334b">
+        <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" />
+      </circle>
       <text x="0" y="36" text-anchor="middle" fill="#ff334b" font-weight="bold" font-size="9.5" class="font-mono">EVENT BUS</text>
     </g>
 
@@ -141,7 +201,9 @@
     <!-- Node 5: Real-time SignalR / WebSockets -->
     <g transform="translate(250, 140)">
       <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#cbd5e1" stroke-width="1.2" />
-      <circle cx="0" cy="0" r="5" fill="#38bdf8" class="pulsing-node-2" />
+      <circle cx="0" cy="0" r="5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" />
+      </circle>
       <text x="24" y="4" text-anchor="start" fill="#94a3b8" font-size="8.5" class="font-mono">SIGNALR</text>
     </g>
 
@@ -151,14 +213,18 @@
   </g>
 
   <!-- LEFT BRANDING & IDENTITY SECTION -->
-  <!-- Top Category / Terminal Tag -->
+  <!-- Top Category / Terminal Tag with BLINKING TERMINAL CURSOR -->
   <g transform="translate(56, 54)">
-    <rect width="286" height="26" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="1" />
-    <circle cx="14" cy="13" r="4" fill="#ff334b" class="pulsing-node-3" />
-    <text x="26" y="17" fill="#cbd5e1" font-size="10.5" font-weight="600" class="font-mono">SYSTEM ARCHITECTURE &amp; .NET CORE</text>
+    <rect width="298" height="26" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="1" />
+    <circle cx="14" cy="13" r="4" fill="#ff334b">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="26" y="17" fill="#cbd5e1" font-size="10.5" font-weight="600" class="font-mono">
+      SYSTEM ARCHITECTURE &amp; .NET CORE<tspan fill="#ff334b">_<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" /></tspan>
+    </text>
   </g>
 
-  <!-- Engineer Name -->
+  <!-- Engineer Name with Shimmering Gradient -->
   <g transform="translate(56, 126)">
     <text x="0" y="0" fill="url(#textWhiteGrad)" font-size="38" font-weight="800" letter-spacing="-0.5" class="font-sans">
       AMR MOHAMED SHAWKY
@@ -187,28 +253,39 @@
     <!-- Badge 1: Clean Arch & DDD -->
     <g transform="translate(0, 0)">
       <rect width="168" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
-      <circle cx="16" cy="17" r="4" fill="#ff334b" />
+      <circle cx="16" cy="17" r="4" fill="#ff334b">
+        <animate attributeName="r" values="3.5;4.5;3.5" dur="2.4s" repeatCount="indefinite" />
+      </circle>
       <text x="28" y="21" fill="#f3f4f6" font-size="11" font-weight="600" class="font-sans">Clean Architecture &amp; DDD</text>
     </g>
 
     <!-- Badge 2: CQRS & Vertical Slices -->
     <g transform="translate(178, 0)">
       <rect width="176" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
-      <circle cx="16" cy="17" r="4" fill="#38bdf8" />
+      <circle cx="16" cy="17" r="4" fill="#38bdf8">
+        <animate attributeName="r" values="3.5;4.5;3.5" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+      </circle>
       <text x="28" y="21" fill="#f3f4f6" font-size="11" font-weight="600" class="font-sans">CQRS &amp; Vertical Slices</text>
     </g>
 
     <!-- Badge 3: Distributed Systems -->
     <g transform="translate(364, 0)">
       <rect width="180" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
-      <circle cx="16" cy="17" r="4" fill="#ff334b" />
+      <circle cx="16" cy="17" r="4" fill="#ff334b">
+        <animate attributeName="r" values="3.5;4.5;3.5" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
+      </circle>
       <text x="28" y="21" fill="#f3f4f6" font-size="11" font-weight="600" class="font-sans">Distributed Microservices</text>
     </g>
   </g>
 
-  <!-- Top-Right Status Indicator -->
+  <!-- Top-Right Status Indicator with ANIMATED RADAR PING -->
   <g transform="translate(810, 24)">
     <rect width="124" height="24" rx="12" fill="#0f172a" stroke="#22c55e" stroke-width="1" stroke-opacity="0.4" />
+    <!-- Expanding Sonar Ping Ring -->
+    <circle cx="14" cy="12" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.5">
+      <animate attributeName="r" values="3.5;9;13" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.4;0" dur="1.8s" repeatCount="indefinite" />
+    </circle>
     <circle cx="14" cy="12" r="3.5" fill="#22c55e" />
     <text x="24" y="16" fill="#86efac" font-size="9.5" font-weight="bold" class="font-mono">AVAILABLE FOR HIRE</text>
   </g>
