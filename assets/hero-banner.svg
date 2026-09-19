@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#080c14" />
+      <stop offset="100%" stop-color="#05070d" />
+    </linearGradient>
+
+    <linearGradient id="accentRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff334b" />
+      <stop offset="100%" stop-color="#e63946" />
+    </linearGradient>
+
+    <linearGradient id="textWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <linearGradient id="glowRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ff334b" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="nodeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Blueprint Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.5" />
+      <circle cx="30" cy="30" r="1" fill="#334155" fill-opacity="0.6" />
+    </pattern>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'SF Pro Text', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace; }
+    .font-sans { font-family: 'SF Pro Display', -apple-system, 'Inter', 'Segoe UI', Roboto, sans-serif; }
+    
+    @keyframes pulseNode {
+      0%, 100% { r: 6; opacity: 0.8; }
+      50% { r: 8; opacity: 1; }
+    }
+    @keyframes dataStream {
+      from { stroke-dashoffset: 40; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes radarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .pulsing-node-1 { animation: pulseNode 3s ease-in-out infinite; }
+    .pulsing-node-2 { animation: pulseNode 2.4s ease-in-out infinite 0.8s; }
+    .pulsing-node-3 { animation: pulseNode 3.2s ease-in-out infinite 1.5s; }
+    .data-flow { stroke-dasharray: 6, 6; animation: dataStream 2s linear infinite; }
+    .reverse-flow { stroke-dasharray: 5, 5; animation: dataStream 2.5s linear infinite reverse; }
+  </style>
+
+  <!-- Base Card Rectangle with Border -->
+  <rect width="960" height="360" rx="16" fill="url(#bgGradient)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Blueprint Background Grid -->
+  <rect width="960" height="360" rx="16" fill="url(#grid)" />
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="820" cy="180" r="150" fill="#ff334b" fill-opacity="0.07" filter="url(#softGlow)" />
+  <circle cx="150" cy="60" r="120" fill="#ff334b" fill-opacity="0.05" filter="url(#softGlow)" />
+  <circle cx="650" cy="280" r="100" fill="#0284c7" fill-opacity="0.05" filter="url(#softGlow)" />
+
+  <!-- ARCHITECTURAL BLUEPRINT GRAPHICS (Right Side) -->
+  <g transform="translate(620, 40)">
+    <!-- Architectural Radar / Domain Boundary Circles -->
+    <circle cx="180" cy="140" r="130" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="4, 4" />
+    <circle cx="180" cy="140" r="90" fill="none" stroke="#334155" stroke-width="1" stroke-opacity="0.7" />
+    <circle cx="180" cy="140" r="45" fill="none" stroke="#ff334b" stroke-width="1" stroke-opacity="0.4" />
+
+    <!-- Crosshair Guides -->
+    <line x1="20" y1="140" x2="340" y2="140" stroke="#1e293b" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="180" y1="0" x2="180" y2="280" stroke="#1e293b" stroke-width="1" stroke-opacity="0.6" />
+
+    <!-- Microservices & Event Bus Message Flow Lines -->
+    <!-- Gateway to Message Broker -->
+    <line x1="40" y1="80" x2="120" y2="140" stroke="#38bdf8" stroke-width="1.5" class="data-flow" />
+    <!-- Broker to Services -->
+    <line x1="120" y1="140" x2="220" y2="70" stroke="#ff334b" stroke-width="1.5" class="data-flow" />
+    <line x1="120" y1="140" x2="250" y2="140" stroke="#38bdf8" stroke-width="1.5" class="reverse-flow" />
+    <line x1="120" y1="140" x2="210" y2="210" stroke="#ff334b" stroke-width="1.5" class="data-flow" />
+
+    <!-- CQRS Command & Query flow curves -->
+    <path d="M 220,70 Q 280,60 300,100" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3, 3" />
+    <path d="M 210,210 Q 270,220 300,180" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3, 3" />
+
+    <!-- Architecture Nodes -->
+    <!-- Node 1: API Gateway -->
+    <g transform="translate(40, 80)">
+      <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="5" fill="#38bdf8" />
+      <text x="-2" y="26" text-anchor="middle" fill="#94a3b8" font-size="9" class="font-mono">GATEWAY</text>
+    </g>
+
+    <!-- Node 2: Central Message Broker (RabbitMQ / MassTransit) -->
+    <g transform="translate(120, 140)">
+      <circle cx="0" cy="0" r="24" fill="#0f172a" stroke="#ff334b" stroke-width="2" filter="url(#nodeGlow)" />
+      <circle cx="0" cy="0" r="8" fill="#ff334b" class="pulsing-node-1" />
+      <text x="0" y="36" text-anchor="middle" fill="#ff334b" font-weight="bold" font-size="9.5" class="font-mono">EVENT BUS</text>
+    </g>
+
+    <!-- Node 3: Command Service (CQRS Write) -->
+    <g transform="translate(220, 70)">
+      <rect x="-18" y="-12" width="36" height="24" rx="4" fill="#0f172a" stroke="#cbd5e1" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#f8fafc" font-size="8.5" font-weight="bold" class="font-mono">CMD</text>
+      <text x="0" y="22" text-anchor="middle" fill="#64748b" font-size="8" class="font-mono">WRITE DB</text>
+    </g>
+
+    <!-- Node 4: Query Service (CQRS Read / Cache) -->
+    <g transform="translate(210, 210)">
+      <rect x="-18" y="-12" width="36" height="24" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#38bdf8" font-size="8.5" font-weight="bold" class="font-mono">QRY</text>
+      <text x="0" y="22" text-anchor="middle" fill="#64748b" font-size="8" class="font-mono">REDIS/READ</text>
+    </g>
+
+    <!-- Node 5: Real-time SignalR / WebSockets -->
+    <g transform="translate(250, 140)">
+      <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#cbd5e1" stroke-width="1.2" />
+      <circle cx="0" cy="0" r="5" fill="#38bdf8" class="pulsing-node-2" />
+      <text x="24" y="4" text-anchor="start" fill="#94a3b8" font-size="8.5" class="font-mono">SIGNALR</text>
+    </g>
+
+    <!-- Blueprint Coordinates / Specs Overlay -->
+    <text x="180" y="-10" text-anchor="middle" fill="#334155" font-size="8.5" class="font-mono">SYS_ARCH::DISTRIBUTED_MESH</text>
+    <text x="320" y="270" text-anchor="end" fill="#334155" font-size="8" class="font-mono">SCALE_FACTOR: 99.9%</text>
+  </g>
+
+  <!-- LEFT BRANDING & IDENTITY SECTION -->
+  <!-- Top Category / Terminal Tag -->
+  <g transform="translate(56, 54)">
+    <rect width="286" height="26" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="1" />
+    <circle cx="14" cy="13" r="4" fill="#ff334b" class="pulsing-node-3" />
+    <text x="26" y="17" fill="#cbd5e1" font-size="10.5" font-weight="600" class="font-mono">SYSTEM ARCHITECTURE &amp; .NET CORE</text>
+  </g>
+
+  <!-- Engineer Name -->
+  <g transform="translate(56, 126)">
+    <text x="0" y="0" fill="url(#textWhiteGrad)" font-size="38" font-weight="800" letter-spacing="-0.5" class="font-sans">
+      AMR MOHAMED SHAWKY
+    </text>
+  </g>
+
+  <!-- Professional Subtitle -->
+  <g transform="translate(56, 160)">
+    <text x="0" y="0" fill="url(#accentRed)" font-size="18" font-weight="700" letter-spacing="0.2" class="font-sans">
+      Full Stack .NET Engineer &amp; Software Architect
+    </text>
+  </g>
+
+  <!-- Tagline / Mission -->
+  <g transform="translate(56, 194)">
+    <text x="0" y="0" fill="#94a3b8" font-size="13.5" class="font-sans" letter-spacing="0.1">
+      Engineering high-concurrency microservices, modular monoliths, and event-driven architectures.
+    </text>
+    <text x="0" y="20" fill="#64748b" font-size="12.5" class="font-sans">
+      Computer Science Graduate (Benha Univ) • Ranked #6 Technical Content Creator (Egypt 🇪🇬)
+    </text>
+  </g>
+
+  <!-- Strategic Pill Badges (Bottom Area) -->
+  <g transform="translate(56, 266)">
+    <!-- Badge 1: Clean Arch & DDD -->
+    <g transform="translate(0, 0)">
+      <rect width="168" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="16" cy="17" r="4" fill="#ff334b" />
+      <text x="28" y="21" fill="#f3f4f6" font-size="11" font-weight="600" class="font-sans">Clean Architecture &amp; DDD</text>
+    </g>
+
+    <!-- Badge 2: CQRS & Vertical Slices -->
+    <g transform="translate(178, 0)">
+      <rect width="176" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="16" cy="17" r="4" fill="#38bdf8" />
+      <text x="28" y="21" fill="#f3f4f6" font-size="11" font-weight="600" class="font-sans">CQRS &amp; Vertical Slices</text>
+    </g>
+
+    <!-- Badge 3: Distributed Systems -->
+    <g transform="translate(364, 0)">
+      <rect width="180" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="16" cy="17" r="4" fill="#ff334b" />
+      <text x="28" y="21" fill="#f3f4f6" font-size="11" font-weight="600" class="font-sans">Distributed Microservices</text>
+    </g>
+  </g>
+
+  <!-- Top-Right Status Indicator -->
+  <g transform="translate(810, 24)">
+    <rect width="124" height="24" rx="12" fill="#0f172a" stroke="#22c55e" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="14" cy="12" r="3.5" fill="#22c55e" />
+    <text x="24" y="16" fill="#86efac" font-size="9.5" font-weight="bold" class="font-mono">AVAILABLE FOR HIRE</text>
+  </g>
+</svg>

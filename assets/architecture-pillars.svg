@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pillarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1424" />
+      <stop offset="100%" stop-color="#0b0f19" />
+    </linearGradient>
+    <linearGradient id="redBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff334b" />
+      <stop offset="100%" stop-color="#e63946" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'SF Pro Text', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace; }
+    .font-sans { font-family: 'SF Pro Display', -apple-system, 'Inter', 'Segoe UI', Roboto, sans-serif; }
+  </style>
+
+  <!-- Container -->
+  <rect width="960" height="120" rx="12" fill="#080c14" stroke="#1e293b" stroke-width="1.2" />
+
+  <!-- PILLAR 1: CQRS & VERTICAL SLICE -->
+  <g transform="translate(14, 12)">
+    <rect width="220" height="96" rx="8" fill="url(#pillarBg)" stroke="#334155" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="96" rx="2" fill="#ff334b" />
+    <text x="16" y="24" fill="#ff334b" font-size="10" font-weight="700" class="font-mono">PATTERN SPECIALTY</text>
+    <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">CQRS &amp; Vertical Slices</text>
+    <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">Decoupled command/query</text>
+    <text x="16" y="78" fill="#64748b" font-size="10" class="font-mono">MediatR • Feature Slices</text>
+  </g>
+
+  <!-- PILLAR 2: MICROSERVICES & EVENT BUS -->
+  <g transform="translate(250, 12)">
+    <rect width="220" height="96" rx="8" fill="url(#pillarBg)" stroke="#334155" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="96" rx="2" fill="#38bdf8" />
+    <text x="16" y="24" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">DISTRIBUTED SYSTEMS</text>
+    <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">Microservices &amp; Events</text>
+    <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">Asynchronous messaging</text>
+    <text x="16" y="78" fill="#64748b" font-size="10" class="font-mono">RabbitMQ • MassTransit</text>
+  </g>
+
+  <!-- PILLAR 3: CLEAN ARCHITECTURE & DDD -->
+  <g transform="translate(486, 12)">
+    <rect width="220" height="96" rx="8" fill="url(#pillarBg)" stroke="#334155" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="96" rx="2" fill="#818cf8" />
+    <text x="16" y="24" fill="#818cf8" font-size="10" font-weight="700" class="font-mono">CORE ENGINEERING</text>
+    <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">Clean Architecture &amp; DDD</text>
+    <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">Rich domains &amp; testability</text>
+    <text x="16" y="78" fill="#64748b" font-size="10" class="font-mono">Repository • Unit of Work</text>
+  </g>
+
+  <!-- PILLAR 4: CONTENT CREATION (#6 RANKED) -->
+  <g transform="translate(722, 12)">
+    <rect width="224" height="96" rx="8" fill="url(#pillarBg)" stroke="#ff334b" stroke-width="1" stroke-opacity="0.4" />
+    <rect x="0" y="0" width="4" height="96" rx="2" fill="#ff334b" />
+    <text x="16" y="24" fill="#ff334b" font-size="10" font-weight="700" class="font-mono">LEADERSHIP &amp; COMMUNITY</text>
+    <text x="16" y="44" fill="#ffffff" font-size="13.5" font-weight="700" class="font-sans">Ranked #6 Tech Creator</text>
+    <text x="16" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">LinkedIn Egypt &amp; YouTube</text>
+    <text x="16" y="78" fill="#64748b" font-size="10" class="font-mono">Educator • Mentor • @Eng_Amr</text>
+  </g>
+</svg>

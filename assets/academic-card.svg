@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 170" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="redBadgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b" />
+      <stop offset="100%" stop-color="#e63946" />
+    </linearGradient>
+
+    <filter id="badgeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <pattern id="cardGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.6" />
+    </pattern>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'SF Pro Text', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace; }
+    .font-sans { font-family: 'SF Pro Display', -apple-system, 'Inter', 'Segoe UI', Roboto, sans-serif; }
+  </style>
+
+  <!-- Background Base with Rounded Corners -->
+  <rect width="960" height="170" rx="14" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5" />
+  <rect width="960" height="170" rx="14" fill="url(#cardGrid)" />
+
+  <!-- Left Accent Ribbon -->
+  <rect x="0" y="0" width="6" height="170" rx="3" fill="#ff334b" />
+
+  <!-- SECTION 1: DEGREE & UNIVERSITY (Left Column) -->
+  <g transform="translate(36, 32)">
+    <!-- Mini Category Tag -->
+    <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1.2" class="font-mono">ACADEMIC FOUNDATION</text>
+    
+    <!-- University & Degree Title -->
+    <text x="0" y="30" fill="#ffffff" font-size="19" font-weight="800" class="font-sans">Computer Science Graduate</text>
+    <text x="0" y="55" fill="#cbd5e1" font-size="14" font-weight="600" class="font-sans">Faculty of Computers &amp; Artificial Intelligence</text>
+    <text x="0" y="78" fill="#38bdf8" font-size="13" font-weight="500" class="font-sans">Benha University</text>
+    
+    <text x="0" y="104" fill="#64748b" font-size="11.5" class="font-sans">Focus: Distributed Software Systems, Data Structures &amp; Algorithms</text>
+  </g>
+
+  <!-- Vertical Divider 1 -->
+  <line x1="450" y1="24" x2="450" y2="146" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4, 4" />
+
+  <!-- SECTION 2: GRADUATION PROJECT A+ (Center-Right Hero Metric) -->
+  <g transform="translate(480, 24)">
+    <!-- Card Container for Project Grade -->
+    <rect width="210" height="122" rx="10" fill="#111827" stroke="#ff334b" stroke-width="1.5" stroke-opacity="0.4" />
+    
+    <text x="18" y="24" fill="#94a3b8" font-size="9.5" font-weight="700" letter-spacing="0.8" class="font-mono">GRADUATION PROJECT</text>
+    
+    <!-- Grade A+ Big Impact Text -->
+    <g transform="translate(18, 68)">
+      <rect x="-4" y="-36" width="64" height="42" rx="8" fill="url(#redBadgeGrad)" filter="url(#badgeGlow)" />
+      <text x="28" y="-7" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" class="font-sans">A+</text>
+      
+      <text x="72" y="-20" fill="#f8fafc" font-size="13.5" font-weight="700" class="font-sans">Distinction</text>
+      <text x="72" y="-4" fill="#86efac" font-size="10" font-weight="600" class="font-mono">TOP TIER EVALUATION</text>
+    </g>
+
+    <text x="18" y="102" fill="#94a3b8" font-size="11" class="font-sans">Enterprise-grade Architecture &amp; System Design</text>
+  </g>
+
+  <!-- Vertical Divider 2 -->
+  <line x1="710" y1="24" x2="710" y2="146" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4, 4" />
+
+  <!-- SECTION 3: CUMULATIVE GPA (Right Column) -->
+  <g transform="translate(735, 24)">
+    <rect width="188" height="122" rx="10" fill="#111827" stroke="#334155" stroke-width="1" />
+    
+    <text x="18" y="24" fill="#94a3b8" font-size="9.5" font-weight="700" letter-spacing="0.8" class="font-mono">CUMULATIVE GPA</text>
+    
+    <!-- GPA Score -->
+    <g transform="translate(18, 68)">
+      <text x="0" y="0" fill="#ffffff" font-size="34" font-weight="900" class="font-sans">3.2</text>
+      <text x="56" y="-8" fill="#64748b" font-size="14" font-weight="600" class="font-sans">/ 4.0</text>
+      <text x="0" y="22" fill="#38bdf8" font-size="11" font-weight="600" class="font-mono">EXCELLENT STANDING</text>
+    </g>
+
+    <text x="18" y="102" fill="#94a3b8" font-size="11" class="font-sans">Consistent Academic Merit</text>
+  </g>
+</svg>
