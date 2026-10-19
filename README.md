@@ -22,6 +22,9 @@
 
 <br/>
 
+<div align="center">
+  <img src="./assets/animation (1).gif" alt="demon slayer" width="100%" />
+</div>
 ---
 
 ### 🚀 About Me
