@@ -3,11 +3,8 @@
 <a href="https://amr-shawky.github.io/Portfolio-Website/">
   <img src="./assets/hero-banner.svg" alt="Amr Mohamed Shawky - Full Stack .NET Engineer & Software Architect" width="100%" />
 </a>
-<br/><br/>
-
-<a href="https://amr-shawky.github.io/Portfolio-Website/">
-  <img src="./assets/Moonlit GitHub Profile Banner Animation.gif" alt="Amr Mohamed Shawky - Full Stack .NET Engineer & Software Architect" width="100%" />
-</a>
+<br/><br/>  
+[![Amr Shawky GitHub Banner](./assets/amr_shawky_cozy_anime_refined.gif)](https://amr-shawky.github.io/Portfolio-Website/)
 <br/><br/>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live_Website-e63946?style=for-the-badge&logo=google-chrome&logoColor=white)](https://amr-shawky.github.io/Portfolio-Website/)
