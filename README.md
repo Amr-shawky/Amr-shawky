@@ -341,3 +341,32 @@ Beyond engineering systems, I am dedicated to knowledge sharing and developer me
   <img src="./assets/stickman-duel.svg" alt="Stickman Kinetic Sword Duel" width="100%" />
 </div>
 
+---
+
+<div align="center">
+
+  <h2>🎬 Learn & Build With Me on YouTube</h2>
+
+  <p>
+    .NET Tutorials • Software Architecture • Clean Code • Real Projects
+  </p>
+
+  <a href="https://www.youtube.com/@Eng_Amr">
+    <img
+      src="./assets/cozy_anime_.net_youtube_studio.png"
+      alt="Eng Amr - YouTube Channel"
+      width="55%"
+    />
+  </a>
+
+  <br/><br/>
+
+  <a href="https://www.youtube.com/@Eng_Amr">
+    <img
+      src="https://img.shields.io/badge/YouTube-Visit_My_Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
+      alt="Visit My YouTube Channel"
+    />
+  </a>
+
+</div>
+
