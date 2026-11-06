@@ -353,7 +353,7 @@ Beyond engineering systems, I am dedicated to knowledge sharing and developer me
 
   <a href="https://www.youtube.com/@Eng_Amr">
     <img
-      src="./assets/cozy_anime_.net_youtube_studio.png"
+      src="./assets/Cozy Anime .NET YouTube Studio.png"
       alt="Eng Amr - YouTube Channel"
       width="55%"
     />
